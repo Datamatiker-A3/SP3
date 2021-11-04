@@ -1,0 +1,48 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+abstract class Turnering
+class Main
+class Hold
+class KnockoutTurnering
+class PointTurnering
+class Kamp
+
+Main *-- Turnering
+Turnering <|-- KnockoutTurnering
+Turnering<|-- PointTurnering
+Turnering o-- "16.." Hold
+Turnering o-- Kamp
+Kamp o-- "2" Hold
+
+
+class Main {
+IndlæsData()
+}
+class Kamp{
+- int længdeAfKamp
+- Hold[2] holdIKamp
+int[2] resultat
+}
+
+class Hold{
+-String holdNavn
+-int antalSpillere
+- int målScore;
+
+}
+abstract class Turnering{
+-int point
+OpretTurnering()
+OpretHold()
+FjernOverskud()
+OpdaterMålScore()
+OpdaterKampScore()
+}
+class KnockoutTurnering{
+}
+class PointTurnering{
+}
+
+
+@enduml
