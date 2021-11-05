@@ -18,7 +18,7 @@ public class Hold {
 
     }
 
-    public void læsHoldData(String data) throws FileNotFoundException {
+  /*  public void læsHoldData(String data) throws FileNotFoundException {
         File file = new File(data);
         Scanner sc = new Scanner(file);
         while(sc.hasNext()){
@@ -27,9 +27,13 @@ public class Hold {
             int holdIDtmp = Integer.parseInt(lineArray[0]);
             int antalSpilleretmp = Integer.parseInt(lineArray[2]);
             Hold hold = new Hold(holdIDtmp,lineArray[1],antalSpilleretmp);
-            System.out.println(hold.toString());
+            System.out.println(hold);
         }
-    }
+    }*/
 
+    @Override
+    public String toString(){
+        return holdNavn + " " + antalSpillere;
+    }
 
 }

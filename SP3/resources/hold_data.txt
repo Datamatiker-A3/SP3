@@ -1,4 +1,3 @@
-holdID;holdnavn;antalspillere;
 1;Good strikers;2
 2;No Gravity Guys;4
 3;Redheads;3
