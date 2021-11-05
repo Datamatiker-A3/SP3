@@ -1,4 +1,4 @@
-package com.company;
+package Bordfodboldturnering;
 
 public class Main {
 
