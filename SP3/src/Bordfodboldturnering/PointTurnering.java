@@ -1,4 +1,4 @@
 package Bordfodboldturnering;
 
-public class PointTurnering {
+public class PointTurnering extends Turnering {
 }

@@ -1,4 +1,4 @@
 package Bordfodboldturnering;
 
-public class Turnering {
+public abstract class Turnering {
 }
