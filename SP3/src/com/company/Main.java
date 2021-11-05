@@ -2,8 +2,10 @@ package com.company;
 
 public class Main {
 
-    public static void main(String[] args) {
-	// write your code here
-        System.out.println("Hello");
+    public static void main(String[] args)
+    {
+        System.out.println("Damn boy");
+
+        System.out.println("123");
     }
 }
