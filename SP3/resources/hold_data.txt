@@ -1,0 +1,17 @@
+holdnavn;antalspillere;
+Good strikers;2
+No Gravity Guys;4
+Redheads;3
+The Prawns;2
+Stealth Scorers;2
+Deez Nuts;3
+Team Badass;4
+Noble Bitches;2
+Mighty Crew;2
+Stompers;3
+Hissing Dogs;3
+The Magicians;4
+Donkey Rush;4
+Flat Earth;2
+The Sweat Gnomes;3
+Round Earth;2
