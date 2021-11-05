@@ -20,9 +20,11 @@ class Main {
 IndlæsData()
 }
 class Kamp{
-- int længdeAfKamp
+- int kampLængde
+- kampID
 - Hold[2] holdIKamp
-int[2] resultat
+- int[2] resultat
+findVinder()
 }
 
 class Hold{
@@ -33,6 +35,7 @@ class Hold{
 }
 abstract class Turnering{
 -int point
+-Arraylist<Kamp>Kampe
 OpretTurnering()
 OpretHold()
 FjernOverskud()
@@ -40,6 +43,7 @@ OpdaterMålScore()
 OpdaterKampScore()
 }
 class KnockoutTurnering{
+
 }
 class PointTurnering{
 }

@@ -7,5 +7,7 @@ public class Main {
         System.out.println("Damn boy");
 
         System.out.println("123");
+
+        System.out.println("1234");
     }
 }
