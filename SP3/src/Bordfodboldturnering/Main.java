@@ -1,13 +1,13 @@
 package Bordfodboldturnering;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
 public class Main {
 
-    public static void main(String[] args)
-    {
-        System.out.println("Damn boy, you gay");
 
-        System.out.println("123");
+    public static void main(String[] args) {
 
-        System.out.println("1234");
     }
 }
