@@ -9,7 +9,9 @@ public class Main {
 
     public static void main(String[] args) throws FileNotFoundException {
         læsHoldData("SP3/resources/hold_data.txt");
+        System.out.println("test2");
     }
+
     public static void læsHoldData(String data) throws FileNotFoundException {
         File file = new File(data);
         Scanner sc = new Scanner(file);
