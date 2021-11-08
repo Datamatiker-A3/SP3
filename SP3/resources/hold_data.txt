@@ -14,3 +14,6 @@
 14;Flat Earth;2
 15;The Sweat Gnomes;3
 16;Round Earth;2
+17;Hello;3
+18;OhNo;40
+19;OhShit;2

@@ -3,6 +3,7 @@ package Bordfodboldturnering;
 import java.util.ArrayList;
 
 public class Hold {
+    private int Points;
     private String holdNavn;
     private int antalSpillere;
     private int holdID;
@@ -13,6 +14,14 @@ public class Hold {
         this.holdNavn = holdNavn;
         this.antalSpillere = antalSpillere;
 
+    }
+
+    public int getPoints() {
+        return Points;
+    }
+
+    public void setPoints(int points) {
+        Points = points;
     }
 
     @Override
