@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class KnockOutTurnering extends Turnering {
     Random random = new Random();
     Random random2 = new Random();
-    int nuværeneKamp = 1;
+    int nuværendeKamp = 1;
     ArrayList<Kamp> kampOpsættelse = new ArrayList<>();
     ArrayList<Hold> holdListe = new ArrayList<>();
     public void læsHoldData(String data) throws FileNotFoundException {
@@ -32,25 +32,41 @@ public class KnockOutTurnering extends Turnering {
             }
         }
     }
-    public void opsætKamp(int i){
-        int hold1 = random.nextInt(0, holdListe.size()-1);
-        System.out.println(hold1);
-        int hold2 = random2.nextInt(0, holdListe.size()-1);
-        System.out.println(hold2);
-        if(hold1 == hold2 && hold2 !=holdListe.size()-1){
-            hold2++;
+    public void opsætKamp(int i) throws IndexOutOfBoundsException{
+        boolean isChanged = false;
+        while(holdListe.size() != 0) {
+            System.out.println(holdListe.size() + " holdliste size");
+            int hold1 = random.nextInt(0, holdListe.size() - 1);
+            System.out.println(hold1 + " Team 1");
+            int hold2 = random2.nextInt(0, holdListe.size() - 1);
+            System.out.println(hold2 + " Team 2 pre");
+            if (hold1 == hold2 && hold2 != holdListe.size() - 1) {
+                hold2++;
+                isChanged = true;
+            } else if (hold1 == hold2 && hold2 != 0) {
+                hold2--;
+                isChanged = true;
+            }
+            System.out.println(hold2 + " Team 2 post");
+            Kamp kamp = new Kamp(holdListe.get(hold1), holdListe.get(hold2), i, nuværendeKamp);
+            System.out.println("Speedbumb 1");
+            if(holdListe.size() >2) {
+                holdListe.remove(hold1);
+                if(isChanged == true && hold2 != 0){
+                    holdListe.remove(hold2-1);
+                }
+                else if(isChanged == true && hold2 != holdListe.size()-1){
+                    holdListe.remove(hold2+1);
+                }
+                else {
+                    holdListe.remove(hold2);
+                }
+            }
+            else{holdListe.clear();}
+            kampOpsættelse.add(kamp);
+            System.out.println(kamp.hold1 + " spiller imod " + kamp.hold2);
+            nuværendeKamp++;
+            System.out.println("Speedbumb 2");
         }
-        else if (hold1 == hold2 && hold2 != 0){
-            hold2--;
-        }
-        else {}
-        Kamp kamp = new Kamp(holdListe.get(hold1),holdListe.get(hold2),i, nuværeneKamp);
-        holdListe.remove(hold1);
-        holdListe.remove(hold2);
-        kampOpsættelse.add(kamp);
-        System.out.println(kamp.hold1);
-        System.out.println(kamp.hold2);
-        nuværeneKamp++;
-        System.out.println(holdListe.size());
     }
 }
