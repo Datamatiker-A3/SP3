@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public class Hold {
     private int Points;
+    private int målscore;
     private String holdNavn;
     private int antalSpillere;
     private int holdID;
