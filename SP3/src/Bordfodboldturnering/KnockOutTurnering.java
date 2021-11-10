@@ -45,11 +45,8 @@ public class KnockOutTurnering extends Turnering {
     public void opsætKamp(int i) throws IndexOutOfBoundsException{
         boolean erÆndret = false;
         while(holdListe.size() != 0) {
-            System.out.println(holdListe.size() + " holdliste size");
             int hold1 = random.nextInt(0, holdListe.size() - 1);
-            System.out.println(hold1 + " Team 1");
             int hold2 = random2.nextInt(0, holdListe.size() - 1);
-            System.out.println(hold2 + " Team 2 pre");
             if (hold1 == hold2 && hold2 != holdListe.size() - 1) {
                 hold2++;
                 erÆndret = true;
@@ -57,7 +54,6 @@ public class KnockOutTurnering extends Turnering {
                 hold2--;
                 erÆndret = true;
             }
-            System.out.println(hold2 + " Team 2 post");
             Kamp kamp = new Kamp(holdListe.get(hold1), holdListe.get(hold2), i, nuværendeKamp);
             if(holdListe.size() >2) {
                 if(hold1 > hold2) {
