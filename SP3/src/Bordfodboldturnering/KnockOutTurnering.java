@@ -14,7 +14,7 @@ public class KnockOutTurnering extends Turnering {
     ArrayList<Kamp> kampOpsættelse = new ArrayList<>();
     ArrayList<Hold> holdListe = new ArrayList<>();
 
-    public void circle(){
+    public void kampCyklus(){
         fjernOverskud();
         for (int i = 0; i < cyklus; i++){
             opsætKamp(30);
