@@ -11,7 +11,8 @@ class Kamp
 Main *-- Turnering
 Turnering <|-- KnockoutTurnering
 Turnering<|-- PointTurnering
-Turnering o-- "16.." Hold
+KnockoutTurnering o-- "16.." Hold
+PointTurnering o-- "16.." Hold
 Turnering o-- Kamp
 Kamp o-- "2" Hold
 
@@ -21,31 +22,45 @@ IndlæsData()
 }
 class Kamp{
 - int kampLængde
-- kampID
-- Hold[2] holdIKamp
+- int kampID
+- Hold[2] holdKamp
 - int[2] resultat
-findVinder()
++ findVinder()
 }
 
 class Hold{
--String holdNavn
--int antalSpillere
-- int målScore;
+- int points
+- String holdNavn
+- int antalSpillere
+- int holdID
+- int målScore
++ getPoints()
++ setPoints()
++ toString()
 
 }
 abstract class Turnering{
--int point
--Arraylist<Kamp>Kampe
-OpretTurnering()
-OpretHold()
-FjernOverskud()
-OpdaterMålScore()
-OpdaterKampScore()
+- Arraylist<Hold>holdListe
++ {abstract}opretTurnering()
++ {abstract}læsHoldData()
++ {abstract}fjernOverskud()
++ {abstract}opsætKamp()
++ {abstract}opdaterMålScore()
++ {abstract}opdaterKampScore()
 }
 class KnockoutTurnering{
-
+- int nuværendeKamp
+- Arraylist <Kamp> kampOpsættelse
+- Arraylist <Hold> holdListe
++ læsHoldData()
++ fjernOverskud()
++ opsætKamp()
 }
 class PointTurnering{
+- int nuværendeKamp
++ læsHoldData()
++ fjernOverskud()
++ opsætKamp()
 }
 
 

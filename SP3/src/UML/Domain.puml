@@ -11,7 +11,8 @@ object Kamp
 Main *-- Turnering
 Turnering <|-- KnockoutTurnering
 Turnering<|-- PointTurnering
-Turnering o-- "16.." Hold
+KnockoutTurnering o-- "16.." Hold
+PointTurnering o-- "16.." Hold
 Turnering o-- Kamp
 Kamp o-- "2" Hold
 
