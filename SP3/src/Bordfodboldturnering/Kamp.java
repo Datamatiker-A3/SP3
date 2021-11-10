@@ -17,4 +17,5 @@ public class Kamp {
        hold1.setPoints(hold1.getPoints()+2);
     }
 
+
 }
