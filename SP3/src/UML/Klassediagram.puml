@@ -18,14 +18,15 @@ Kamp o-- "2" Hold
 
 
 class Main {
-IndlæsData()
+
 }
 class Kamp{
 - int kampLængde
 - int kampID
 - Hold[2] holdKamp
 - int[2] resultat
-+ findVinder()
++ findVinderKnockOut()
++ findVinderPoint()
 }
 
 class Hold{
@@ -52,6 +53,7 @@ class KnockoutTurnering{
 - int nuværendeKamp
 - Arraylist <Kamp> kampOpsættelse
 - Arraylist <Hold> holdListe
++ kampCyklus()
 + læsHoldData()
 + fjernOverskud()
 + opsætKamp()
