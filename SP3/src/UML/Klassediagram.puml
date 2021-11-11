@@ -16,7 +16,7 @@ Turnering o-- Kamp
 Kamp o-- "2" Hold
 
 class Ui{
- - Scanner scanner
+ - Scanner brugerInput
  + opretTurnering()
  + seTurnering()
  + seHold()
@@ -48,8 +48,7 @@ class Hold{
 }
 abstract class Turnering{
 - Random random
-- Filereader informationLæser
-- Scanner scanner
+- Scanner filLæser
 - int nuværendeKamp
 - Arraylist <Kamp> kampOpsættelse
 - Arraylist<Hold>holdListe
