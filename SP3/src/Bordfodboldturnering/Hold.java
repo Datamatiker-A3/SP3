@@ -27,7 +27,7 @@ public class Hold {
 
     @Override
     public String toString(){
-        return holdNavn+ " " + antalSpillere;
+        return holdNavn;
     }
 
 }

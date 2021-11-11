@@ -9,7 +9,7 @@ public class Main {
         KnockOutTurnering turnering = new KnockOutTurnering();
         turnering.læsHoldData("SP3/resources/hold_data.txt");
         turnering.kampCyklus();
-        System.out.println(turnering.holdListe.size());
+
     }
 
 }
