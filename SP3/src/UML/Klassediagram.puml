@@ -11,8 +11,7 @@ Main o-- Ui
 Ui *-- Turnering
 Turnering <|-- KnockoutTurnering
 Turnering<|-- PointTurnering
-KnockoutTurnering o-- "16.." Hold
-PointTurnering o-- "16.." Hold
+Turnering o-- "16" Hold
 Turnering o-- Kamp
 Kamp o-- "2" Hold
 
