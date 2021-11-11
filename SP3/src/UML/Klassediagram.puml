@@ -47,6 +47,7 @@ class Hold{
 
 }
 abstract class Turnering{
+- Random random
 - Filereader informationLæser
 - Scanner scanner
 - int nuværendeKamp
@@ -55,8 +56,6 @@ abstract class Turnering{
 + {abstract}læsHoldData()
 + {abstract}fjernOverskud()
 + {abstract}opsætKamp()
-+ {abstract}opdaterMålScore()
-+ {abstract}opdaterKampScore()
 + {abstract}kampCyklus()
 }
 class KnockoutTurnering{
@@ -64,6 +63,8 @@ class KnockoutTurnering{
 }
 class PointTurnering{
 + tælPoint()
++ opdaterMålScore()
++ opdaterKampScore()
 }
 
 
