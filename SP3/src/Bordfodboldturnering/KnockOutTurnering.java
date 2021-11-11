@@ -37,7 +37,6 @@ public class KnockOutTurnering extends Turnering {
     public void fjernOverskud(){
         if(holdListe.size() > 16){
             while(holdListe.size() != 16){
-                System.out.println(holdListe.get(holdListe.size()-1));
                 holdListe.remove(holdListe.size()-1);
             }
         }
