@@ -7,8 +7,8 @@ class Hold
 class KnockoutTurnering
 class PointTurnering
 class Kamp
-
-Main *-- Turnering
+Main o-- Ui
+Ui *-- Turnering
 Turnering <|-- KnockoutTurnering
 Turnering<|-- PointTurnering
 KnockoutTurnering o-- "16.." Hold
@@ -16,9 +16,15 @@ PointTurnering o-- "16.." Hold
 Turnering o-- Kamp
 Kamp o-- "2" Hold
 
+class Ui{
+opretTurnering()
+seTurnering()
+seHold()
+}
 
 class Main {
-
+main(String[] args)
+Ui ui
 }
 class Kamp{
 - int kampLængde
@@ -43,7 +49,6 @@ class Hold{
 abstract class Turnering{
 - Scanner scanner
 - Arraylist<Hold>holdListe
-+ {abstract}opretTurnering()
 + {abstract}læsHoldData()
 + {abstract}fjernOverskud()
 + {abstract}opsætKamp()
