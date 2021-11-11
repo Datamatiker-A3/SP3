@@ -16,14 +16,15 @@ Turnering o-- Kamp
 Kamp o-- "2" Hold
 
 class Ui{
-opretTurnering()
-seTurnering()
-seHold()
+ - Scanner scanner
+ + opretTurnering()
+ + seTurnering()
+ + seHold()
 }
 
 class Main {
-main(String[] args)
-Ui ui
+ + main(String[] args)
+ - Ui ui
 }
 class Kamp{
 - int kampLængde
@@ -46,28 +47,23 @@ class Hold{
 
 }
 abstract class Turnering{
+- Filereader informationLæser
 - Scanner scanner
+- int nuværendeKamp
+- Arraylist <Kamp> kampOpsættelse
 - Arraylist<Hold>holdListe
 + {abstract}læsHoldData()
 + {abstract}fjernOverskud()
 + {abstract}opsætKamp()
 + {abstract}opdaterMålScore()
 + {abstract}opdaterKampScore()
++ {abstract}kampCyklus()
 }
 class KnockoutTurnering{
-- int nuværendeKamp
-- Arraylist <Kamp> kampOpsættelse
-- Arraylist <Hold> holdListe
-+ kampCyklus()
-+ læsHoldData()
-+ fjernOverskud()
-+ opsætKamp()
+
 }
 class PointTurnering{
-- int nuværendeKamp
-+ læsHoldData()
-+ fjernOverskud()
-+ opsætKamp()
++ tælPoint()
 }
 
 
