@@ -41,6 +41,7 @@ class Hold{
 
 }
 abstract class Turnering{
+- Scanner scanner
 - Arraylist<Hold>holdListe
 + {abstract}opretTurnering()
 + {abstract}læsHoldData()
