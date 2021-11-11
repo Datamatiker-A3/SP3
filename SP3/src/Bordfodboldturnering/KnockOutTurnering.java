@@ -41,7 +41,7 @@ public class KnockOutTurnering extends Turnering {
             }
         }
     }
-    public void opsætKamp(int i) throws IndexOutOfBoundsException{
+    public void opsætKamp(int i){
         boolean erÆndret = false;
         while(holdListe.size() != 0) {
             int hold1 = random.nextInt(0, holdListe.size() - 1);
