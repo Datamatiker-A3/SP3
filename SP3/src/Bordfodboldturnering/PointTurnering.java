@@ -2,21 +2,15 @@ package Bordfodboldturnering;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class PointTurnering extends Turnering {
+    FilLæser filLæser = new FilLæser();
     int nuværeneKamp;
-    public void læsHoldData(String data) throws FileNotFoundException {
-        File file = new File(data);
-        Scanner sc = new Scanner(file);
-        while(sc.hasNext()){
-            String line = sc.nextLine();
-            String[] lineArray = line.split(";");
-            int holdIDtmp = Integer.parseInt(lineArray[0]);
-            int antalSpilleretmp = Integer.parseInt(lineArray[2]);
-            Hold hold = new Hold(holdIDtmp,lineArray[1],antalSpilleretmp);
-            System.out.println(hold);
-        }
+    ArrayList<Hold> holdListe = new ArrayList<>();
+    public void LæsFilData(String s) throws FileNotFoundException{
+        holdListe = filLæser.læsHoldData(s);
     }
     public void fjernOverskud(){
        /* if(holdListe.size() > 16){
