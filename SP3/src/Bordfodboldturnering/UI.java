@@ -5,6 +5,9 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class UI {
+    int input;
+    boolean quit = false;
+    ArrayList<Hold> hold = new ArrayList<>();
     FilLæser filLæser = new FilLæser();
     KnockOutTurnering turnering = new KnockOutTurnering();
 
@@ -15,7 +18,7 @@ public class UI {
             switch(sc.nextInt()){
 
                 case 1:
-                    filLæser.læsHoldData("SP3/resources/hold_data.txt");
+                   hold = filLæser.læsHoldData("SP3/resources/hold_data.txt");
                     System.out.println("Holddata er nu indlæst fra tekstfilen");
                     break;
                 case 2:
@@ -26,19 +29,28 @@ public class UI {
         System.out.println("Tast 1 for at se holdnavnene");
         System.out.println("Tast 2 for at oprette en knock-out turnering");
         System.out.println("Tast 3 for at oprette en point turnering ");
-        switch(sc.nextInt()){
+        System.out.println("Tast 4 for at lukke programmet");
+        do{
+        input = sc.nextInt();
+        switch(input) {
             case 1:
-                for( Hold hold : filLæser.holdListe) {
+                for (Hold hold : filLæser.holdListe) {
                     System.out.println(hold.getHoldNavn());
                 }
                 break;
             case 2:
-                turnering.kampOpsættelse
-
+                turnering.holdListe = hold;
                 turnering.kampCyklus();
                 break;
             case 3:
+                System.out.println("Der kan ikke oprettes en point turnering på nuværende tidspunkt");
                 break;
+            case 4:
+                quit = true;
+                break;
+
         }
+
+        } while(!quit);
     }
 }
