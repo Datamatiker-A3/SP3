@@ -18,6 +18,7 @@ public class KnockOutTurnering extends Turnering {
     }
 
     public void kampCyklus(){
+
         fjernOverskud();
         for (int i = 0; i < cyklus; i++){
             opsætKamp(30);

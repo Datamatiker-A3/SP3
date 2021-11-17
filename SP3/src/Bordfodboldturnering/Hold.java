@@ -25,6 +25,10 @@ public class Hold {
         Points = points;
     }
 
+    public String getHoldNavn() {
+        return holdNavn;
+    }
+
     @Override
     public String toString(){
         return holdNavn;
