@@ -62,6 +62,10 @@ public class UI {
                 break;
 
         }
+            System.out.println("Tast 1 for at se holdnavnene");
+            System.out.println("Tast 2 for at oprette en knock-out turnering");
+            System.out.println("Tast 3 for at oprette en point turnering ");
+            System.out.println("Tast 4 for at lukke programmet");
 
         } while(!quit);
     }
