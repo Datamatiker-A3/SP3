@@ -16,6 +16,7 @@ Turnering o-- Kamp
 Kamp o-- "2" Hold
 
 class Ui{
+ - Arraylist<Turnering> turneringer
  - Scanner brugerInput
  + opretTurnering()
  + seTurnering()
