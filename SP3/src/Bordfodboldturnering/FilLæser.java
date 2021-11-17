@@ -19,4 +19,5 @@ public class FilLæser {
         }
         return holdListe;
     }
+
 }
