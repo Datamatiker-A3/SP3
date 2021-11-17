@@ -4,13 +4,14 @@ import java.sql.*;
 import java.util.ArrayList;
 
 class DBConnector {
+    ArrayList<Hold> holdListeDatabase = new ArrayList<>();
 
     // database URL
     static final String DB_URL = "jdbc:mysql://localhost/Bordfodbold";
     //  Database credentials
     static final String USER = "root";
-    static final String PASS = "KEKW";
-    public ArrayList<String> readFieldData() {
+    static final String PASS = "cph57735";
+    public ArrayList<Hold> readFieldData() {
         ArrayList<String> hold_data = new ArrayList<>() ;
         Connection conn = null;
         Statement stmt = null;
@@ -39,6 +40,8 @@ class DBConnector {
                 int id  = rs.getInt("holdid");
                 String holdNavn = rs.getString("holdNavn");
                 int holdMedlemmer = rs.getInt("holdMedlemmer");
+                Hold hold = new Hold(id,holdNavn,holdMedlemmer);
+                holdListeDatabase.add(hold);
                 String placeholder= id+","+holdNavn+","+holdMedlemmer;
                 hold_data.add(placeholder);
                 System.out.println(hold_data.get(speedbumb));
@@ -70,7 +73,7 @@ class DBConnector {
         }//end try
 
 
-        return hold_data;
+        return holdListeDatabase;
     }
 
 }
