@@ -9,7 +9,7 @@ class DBConnector {
     static final String DB_URL = "jdbc:mysql://localhost/Bordfodbold";
     //  Database credentials
     static final String USER = "root";
-    static final String PASS = "A1n2d3e4r5s6";
+    static final String PASS = "KEKW";
     public ArrayList<String> readFieldData() {
         ArrayList<String> hold_data = new ArrayList<>() ;
         Connection conn = null;

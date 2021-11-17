@@ -9,6 +9,7 @@ public class UI {
     boolean quit = false;
     ArrayList<Hold> hold = new ArrayList<>();
     FilLæser filLæser = new FilLæser();
+    DBConnector dbConnector = new DBConnector();
     KnockOutTurnering turnering = new KnockOutTurnering();
 
     public void menu() throws FileNotFoundException {
@@ -18,11 +19,11 @@ public class UI {
             switch(sc.nextInt()){
 
                 case 1:
-                   hold = filLæser.læsHoldData("SP3/resources/hold_data.txt");
+                    hold = filLæser.læsHoldData("SP3/resources/hold_data.txt");
                     System.out.println("Holddata er nu indlæst fra tekstfilen");
                     break;
                 case 2:
-
+                    dbConnector.readFieldData();
                     System.out.println("Holddata er nu indlæst fra databasen");
                     break;
         }
