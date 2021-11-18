@@ -3,9 +3,9 @@ package Bordfodboldturnering;
 import java.util.ArrayList;
 
 public class Hold {
-    private int Points;
+    private int Points = 0;
 
-    private int målscore;
+    private int målscore = 0;
     private String holdNavn;
     private int antalSpillere;
     private int holdID;
