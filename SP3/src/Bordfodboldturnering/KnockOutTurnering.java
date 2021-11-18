@@ -13,7 +13,7 @@ public class KnockOutTurnering extends Turnering {
     ArrayList<Kamp> kampOpsættelse = new ArrayList<>();
     ArrayList<Hold> holdListe = new ArrayList<>();
 
-    public void LæsFilData(String s) throws FileNotFoundException{
+    public void læsFilData(String s) throws FileNotFoundException{
        holdListe = filLæser.læsHoldData(s);
     }
 
@@ -50,10 +50,10 @@ public class KnockOutTurnering extends Turnering {
                 if(hold1 > hold2) {
                     holdListe.remove(hold1);
                     if(erÆndret == true && hold2 != 0){
-                        holdListe.remove(hold2-1);
+                        holdListe.remove(hold2);
                     }
                     else if(erÆndret == true && hold2 != holdListe.size()-1){
-                        holdListe.remove(hold2+1);
+                        holdListe.remove(hold2);
                     }
                     else {
                         holdListe.remove(hold2);
@@ -61,10 +61,10 @@ public class KnockOutTurnering extends Turnering {
                 }
                 else if(hold2>hold1){
                     if(erÆndret == true && hold2 != 0){
-                        holdListe.remove(hold2-1);
+                        holdListe.remove(hold2);
                     }
                     else if(erÆndret == true && hold2 != holdListe.size()-1){
-                        holdListe.remove(hold2+1);
+                        holdListe.remove(hold2);
                     }
                     else {
                         holdListe.remove(hold2);
