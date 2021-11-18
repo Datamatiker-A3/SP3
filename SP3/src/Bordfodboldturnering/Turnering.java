@@ -7,5 +7,6 @@ public abstract class Turnering {
     ArrayList<Hold> holdListe = new ArrayList<>();
     abstract void fjernOverskud();
     abstract void opsætKamp(int i);
+
 }
 

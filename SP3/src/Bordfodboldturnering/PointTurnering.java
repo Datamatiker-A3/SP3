@@ -117,5 +117,6 @@ public class PointTurnering extends Turnering {
         Kamp kamp3 = new Kamp(finalist1,finalist2,30,nuværendeKamp);
         Hold vinder = kamp3.findVinder();
         System.out.println(vinder + " vandt tuneringen");
+
     }
 }

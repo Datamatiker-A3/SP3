@@ -61,11 +61,14 @@ public class UI {
                 }
                 break;
             case 2:
-                    turnering.holdListe = hold;
-                    turnering.kampCyklus();
+                    KnockOutTurnering knockOutTurnering = new KnockOutTurnering();
+                    knockOutTurnering.holdListe = hold;
+                    knockOutTurnering.kampCyklus();
                 break;
             case 3:
-                System.out.println("Der kan ikke oprettes en point turnering på nuværende tidspunkt");
+                    PointTurnering pointTurnering = new PointTurnering();
+                    pointTurnering.holdListe = hold;
+                    pointTurnering.kampCyklus();
                 break;
             case 4:
                 quit = true;

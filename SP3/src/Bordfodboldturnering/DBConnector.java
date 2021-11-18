@@ -32,8 +32,7 @@ class DBConnector {
 
             String sql = "SELECT * FROM Hold";
             ResultSet rs = stmt.executeQuery(sql);
-            System.out.println(rs);
-            System.out.println("Speed bumb");
+
             //STEP 5: Extract data from result set
             int speedbumb = 0;
             while(rs.next()){
