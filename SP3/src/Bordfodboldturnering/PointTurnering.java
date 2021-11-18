@@ -15,9 +15,7 @@ public class PointTurnering extends Turnering {
     ArrayList<Hold> holdListe = new ArrayList<>();
     ArrayList<Kamp> kampOpsættelse = new ArrayList<>();
     Hold[] finalisterne = new Hold[4];
-    public void læsFilData(String s) throws FileNotFoundException{
-        holdListe = filLæser.læsHoldData(s);
-    }
+
     public void kampCyklus(){
         fjernOverskud();
         for (int i = 0; i < cyklus; i++){

@@ -13,10 +13,6 @@ public class KnockOutTurnering extends Turnering {
     ArrayList<Kamp> kampOpsættelse = new ArrayList<>();
     ArrayList<Hold> holdListe = new ArrayList<>();
 
-    public void læsFilData(String s) throws FileNotFoundException{
-       holdListe = filLæser.læsHoldData(s);
-    }
-
     public void kampCyklus(){
 
         fjernOverskud();
