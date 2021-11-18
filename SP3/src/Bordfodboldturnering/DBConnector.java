@@ -1,5 +1,6 @@
 package Bordfodboldturnering;
 
+import java.io.FileNotFoundException;
 import java.sql.*;
 import java.util.ArrayList;
 
@@ -7,11 +8,12 @@ class DBConnector {
     ArrayList<Hold> holdListeDatabase = new ArrayList<>();
 
     // database URL
+
     static final String DB_URL = "jdbc:mysql://localhost/Bordfodbold";
     //  Database credentials
     static final String USER = "root";
     static final String PASS = "cph57735";
-    public ArrayList<Hold> readFieldData() {
+    public ArrayList<Hold> readFieldData() throws FileNotFoundException {
         ArrayList<String> hold_data = new ArrayList<>() ;
         Connection conn = null;
         Statement stmt = null;
@@ -52,14 +54,16 @@ class DBConnector {
             stmt.close();
             conn.close();
         }catch(SQLException se){
-            //Handle errors for JDBC
-            se.printStackTrace();
+            UI ui = new UI();
+            System.out.println("\nHoldene kunne ikke indlæses fra din database.\n");
+            ui.menu();
         }catch(Exception e){
             //Handle errors for Class.forName
             e.printStackTrace();
         }finally{
             //finally block used to close resources
             try{
+
                 if(stmt!=null)
                     stmt.close();
             }catch(SQLException se2){
@@ -68,7 +72,9 @@ class DBConnector {
                 if(conn!=null)
                     conn.close();
             }catch(SQLException se){
+
                 se.printStackTrace();
+
             }//end finally try
         }//end try
 
