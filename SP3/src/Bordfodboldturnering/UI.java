@@ -22,22 +22,24 @@ public class UI {
 
                 case 1:
                     hold = filLæser.læsHoldData("SP3/resources/hold_data.txt");
+                    System.out.println("");
                     System.out.println("Holddata er nu indlæst fra tekstfilen");
                     isFilLæser = true;
                     break;
                 case 2:
                     hold = dbConnector.readFieldData();
+                    System.out.println("");
                     System.out.println("Holddata er nu indlæst fra databasen");
                     isDataBase = true;
                     break;
         }
-        System.out.println("Tast 1 for at se holdnavnene");
-        System.out.println("Tast 2 for at oprette en knock-out turnering");
-        System.out.println("Tast 3 for at oprette en point turnering ");
-        System.out.println("Tast 4 for at lukke programmet");
+        System.out.println("\n(1)\t For at se holdnavnene");
+        System.out.println("(2)\t For at oprette en knock-out turnering");
+        System.out.println("(3)\t For at oprette en point turnering ");
+        System.out.println("(4)\t For at lukke programmet \n");
         do{
         input = sc.nextInt();
-        switch(input) {
+        switch (input) {
             case 1:
                 if(isFilLæser == true) {
                     for (Hold hold : filLæser.holdListe) {
@@ -62,11 +64,11 @@ public class UI {
                 break;
 
         }
-            System.out.println("Tast 1 for at se holdnavnene");
-            System.out.println("Tast 2 for at oprette en knock-out turnering");
-            System.out.println("Tast 3 for at oprette en point turnering ");
-            System.out.println("Tast 4 for at lukke programmet");
 
+            System.out.println("\n(1)\t For at se holdnavnene");
+            System.out.println("(2)\t For at oprette en knock-out turnering");
+            System.out.println("(3)\t For at oprette en point turnering ");
+            System.out.println("(4)\t For at lukke programmet \n");
         } while(!quit);
     }
 }
