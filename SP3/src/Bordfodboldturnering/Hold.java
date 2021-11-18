@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public class Hold {
     private int Points;
+
     private int målscore;
     private String holdNavn;
     private int antalSpillere;
@@ -15,6 +16,13 @@ public class Hold {
         this.holdNavn = holdNavn;
         this.antalSpillere = antalSpillere;
 
+    }
+    public int getMålscore() {
+        return målscore;
+    }
+
+    public void setMålscore(int målscore) {
+        this.målscore = målscore;
     }
 
     public int getPoints() {
