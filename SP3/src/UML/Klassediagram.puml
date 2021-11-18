@@ -7,15 +7,21 @@ class Hold
 class KnockoutTurnering
 class PointTurnering
 class Kamp
-Main o-- Ui
-Ui *-- Turnering
+class DBConnector
+class Fillæser
+class UI
+
+Main o-- UI
+UI o-- Turnering
 Turnering <|-- KnockoutTurnering
 Turnering<|-- PointTurnering
 Turnering o-- "16" Hold
 Turnering o-- Kamp
 Kamp o-- "2" Hold
+UI o-- DBConnector
+UI o-- Fillæser
 
-class Ui{
+class UI{
  - int input
  - boolean quit
  - boolean isFillæser
@@ -84,6 +90,17 @@ class PointTurnering{
 + returnerHold ()
 + findFinalister ()
 + sidsteKampe ()
+}
+class DBConnector{
+String DB_URL
+String USER
+String PASS
+Arraylist<Hold> holdListeDatabase
++ readFieldData ()
+}
+class Fillæser{
+Arraylist<Hold> holdListe
++ læsHoldData ()
 }
 
 

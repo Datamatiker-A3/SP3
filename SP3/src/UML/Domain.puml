@@ -1,18 +1,23 @@
 @startuml
 'https://plantuml.com/class-diagram
 
-object Turnering
-object Main
-object Hold
-object KnockoutTurnering
-object PointTurnering
-object Kamp
+abstract class Turnering
+class Main
+class Hold
+class KnockoutTurnering
+class PointTurnering
+class Kamp
+class DBConnector
+class Fillæser
+class UI
 
-Main *-- Turnering
+Main o-- UI
+UI o-- Turnering
 Turnering <|-- KnockoutTurnering
 Turnering<|-- PointTurnering
-KnockoutTurnering o-- "16.." Hold
-PointTurnering o-- "16.." Hold
+Turnering o-- "16" Hold
 Turnering o-- Kamp
 Kamp o-- "2" Hold
+UI o-- DBConnector
+UI o-- Fillæser
 @enduml
