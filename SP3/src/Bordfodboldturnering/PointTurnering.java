@@ -13,12 +13,11 @@ public class PointTurnering extends Turnering {
         holdListe = filLæser.læsHoldData(s);
     }
     public void fjernOverskud(){
-       /* if(holdListe.size() > 16){
-            for(int i = 16; i < holdListe.size(); i++){
-                holdListe.remove(i);
+        if(holdListe.size() > 16){
+            while(holdListe.size() != 16){
+                holdListe.remove(holdListe.size()-1);
             }
         }
-        System.out.println(holdListe);*/
     }
     public void opsætKamp(int i){
         /*
