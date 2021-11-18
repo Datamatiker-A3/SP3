@@ -7,45 +7,83 @@ class Hold
 class KnockoutTurnering
 class PointTurnering
 class Kamp
-
-Main *-- Turnering
+Main o-- Ui
+Ui *-- Turnering
 Turnering <|-- KnockoutTurnering
 Turnering<|-- PointTurnering
-Turnering o-- "16.." Hold
+Turnering o-- "16" Hold
 Turnering o-- Kamp
 Kamp o-- "2" Hold
 
+class Ui{
+ - int input
+ - boolean quit
+ - boolean isFillæser
+ - boolean isDataBase
+ - Arraylist<Hold> hold
+ - Fillæser filLæser
+ - DBConnector dbConnector
+ + menu ()
+}
 
 class Main {
-IndlæsData()
+  Ui ui
+  ui.menu()
 }
 class Kamp{
 - int kampLængde
-- kampID
-- Hold[2] holdIKamp
-- int[2] resultat
-findVinder()
+- int kampID
+- Hold[2] beggeHold
++ findVinder()
++ findVinderPoints()
++ getHold1 ()
++ getHold2 ()
 }
 
 class Hold{
--String holdNavn
--int antalSpillere
-- int målScore;
+- int points
+- int målScore
+- String holdNavn
+- int antalSpillere
+- int holdID
+- Arraylist <Kamp> kampHistorik
++ getMålscore ()
++ setMålscore ()
++ getPoints ()
++ setPoints()
++ getHoldNavn ()
++ toString()
 
 }
 abstract class Turnering{
--int point
--Arraylist<Kamp>Kampe
-OpretTurnering()
-OpretHold()
-FjernOverskud()
-OpdaterMålScore()
-OpdaterKampScore()
+- Arraylist <Hold> holdListe
++ {abstract}fjernOverskud()
++ {abstract}opsætKamp()
++ {abstract}kampCyklus()
 }
 class KnockoutTurnering{
+- int nuværendeKamp
+- int cyklus
+- Arraylist <Kamp> kampOpsættelse
+- Arraylist <Hold> holdListe
++ kampCyklus ()
++ fjernOverskud ()
++ opsætKamp ()
++ returnerHold ()
 
 }
 class PointTurnering{
+- int nuværendeKamp
+- int cyklus
+- Arraylist <Kamp> kampOpsættelse
+- Arraylist <Hold> holdListe
+- Hold[4] finalisterne
++ kampCyklus ()
++ fjernOverskud ()
++ opsætKamp ()
++ returnerHold ()
++ findFinalister ()
++ sidsteKampe ()
 }
 
 
