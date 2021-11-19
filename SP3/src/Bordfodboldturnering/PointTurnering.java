@@ -94,10 +94,16 @@ public class PointTurnering extends Turnering {
         for (int i = 0; i < holdListe.size(); i++) {
             for (int j = 0; j < finalisterne.length; j++) {
                 if(holdListe.get(i).getPoints() > finalisterne[j].getPoints()){
+                    if(j != finalisterne.length-1 && finalisterne[j].getPoints()>finalisterne[j+1].getPoints()){
+                        finalisterne[j+1] = finalisterne[j];
+                    }
                     finalisterne[j] = holdListe.get(i);
                     break;
                 }
                 else if(holdListe.get(i).getPoints() == finalisterne[j].getPoints() && holdListe.get(i).getMålscore() > finalisterne[j].getMålscore()){
+                    if(j != finalisterne.length-1 && finalisterne[j].getPoints()>finalisterne[j+1].getPoints()){
+                        finalisterne[j+1] = finalisterne[j];
+                    }
                     finalisterne[j] = holdListe.get(i);
                     break;
                 }
